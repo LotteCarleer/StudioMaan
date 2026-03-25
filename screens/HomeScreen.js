@@ -179,14 +179,18 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#f4edda",
   },
-  title: {
-    marginTop: 50,
-    fontSize: 24,
-    fontWeight: "bold",
-  },
   content: {
     padding: 20,
     gap: 20,
+    alignItems: "center",
+    paddingBottom: 40,
+  },
+  title: {
+    marginTop: 30,
+    fontSize: 24,
+    fontWeight: "bold",
+    textAlign: "center",
+    color: "#222",
   },
   search: {
     width: "100%",
@@ -196,6 +200,14 @@ const styles = StyleSheet.create({
     borderColor: "#ccc",
     fontSize: 16,
   },
+  picker: {
+    width: "90%",
+    maxWidth: 400,
+    backgroundColor: "#fffdf8",
+    borderRadius: 12,
+
+  },
+
 });
 
 export default HomeScreen;

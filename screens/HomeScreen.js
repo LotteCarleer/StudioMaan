@@ -63,7 +63,32 @@ const HomeScreen = ({ navigation }) => {
     if (sortOption === "name-asc") return a.title.localeCompare(b.title);
     if (sortOption === "name-desc") return b.title.localeCompare(a.title);
     return 0;
-  }); 
+  });
+  
+  //blogs
+  useEffect(() => {
+    fetch(
+      "https://api.webflow.com/v2/collections/699ef94b1b701b4e81bf1440/items",
+      {
+        headers: {
+          authorization:
+            "Bearer aec7e4f1f92eb60ba64318b7f59a7b93ba0be926331fab40bc205f4308ea0db9",
+        },
+      },
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setBlogs(
+          data.items.map((item) => ({
+            id: item.id,
+            title: item.fieldData.name,
+            subtitle: item.fieldData["post-summary"],
+            image: { uri: item.fieldData["main-image"]?.url },
+          })),
+        );
+      })
+      .catch((error) => console.error("Error fetching blogs:", error));
+  }, []); 
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
@@ -113,51 +138,19 @@ const HomeScreen = ({ navigation }) => {
         />
       ))}
 
-      <ProductCard
-        title={"Solar Bliss - ketting"}
-        description={"Gouden ketting met zomerse bedels"}
-        price={"12.00"}
-        image={require("../Images/collier-acier-inoxydable-dore-pendentif-soleil-charms-_1.webp")}
-        onPress={() =>
-          navigation.navigate("Details", {
-            title: "Solar Bliss - ketting",
-            description: "Gouden ketting met zomerse bedels",
-            price: "12.00",
-            image: require("../Images/collier-acier-inoxydable-dore-pendentif-soleil-charms-_1.webp"),
-          })
-        }
-      />
-
-      <ProductCard
-        title={"Heart - ring"}
-        description={"Gouden rind met diamanten hart"}
-        price={"10.00"}
-        image={require("../Images/bague-doree-or-18k-coeur-zircon-blanc.webp")}
-        onPress={() =>
-          navigation.navigate("Details", {
-            title: "Heart - ring",
-            description: "Gouden rind met diamanten hart",
-            price: "10.00",
-            image: require("../Images/bague-doree-or-18k-coeur-zircon-blanc.webp"),
-          })
-        }
-      />
-      <ProductCard
-        title={"Bee - oorbellen"}
-        description={"Gouden oorbellen in bijen vorm"}
-        price={"15.00"}
-        image={require("../Images/bee.webp")}
-        onPress={() =>
-          navigation.navigate("Details", {
-            title: "Bee - oorbellen",
-            description: "Gouden ketting met zomerse bedels",
-            price: "15.00",
-            image: require("../Images/bee.webp"),
-          })
-        }
-      />
+      
 
       <Text style={styles.title}>Blogs</Text>
+
+      {blogs.map((blog) => (
+        <BlogCard
+          key={blog.id}
+          title={blog.title}
+          description={blog.subtitle}
+          image={blog.image}
+          onPress={() => navigation.navigate("BlogDetails", blog)}
+        />
+      ))}
 
       <BlogCard
         title={"Hoe juwelen stylen?"}

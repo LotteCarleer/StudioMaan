@@ -40,6 +40,19 @@ const styles = StyleSheet.create({
     color: "#555",
     marginTop: 4,
   },
+   button: {
+    backgroundColor: "#000000",
+  paddingVertical: 12,
+  paddingHorizontal: 28,
+  borderRadius: 10,
+  marginTop: 10,
+  },
+  buttonText: {
+  color: "#fff",
+  fontSize: 15,
+  fontWeight: "600",
+  textAlign: "center",
+},
 });
 
 export default ProductCard;

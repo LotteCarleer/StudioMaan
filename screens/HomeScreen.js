@@ -153,21 +153,7 @@ const HomeScreen = ({ navigation }) => {
         />
       ))}
 
-      <BlogCard
-        title={"Hoe juwelen stylen?"}
-        description={
-          "Juwelen versterken je outfit en persoonlijke stijl. Met de juiste combinaties en balans creëer je eenvoudig een passende look voor elke gelegenheid."
-        }
-        image={require("../Images/fa4890d6d6d9f5b2d2cac9a6386b17e1.jpg")}
-        onPress={() =>
-          navigation.navigate("BlogDetail", {
-            title: "Hoe juwelen stylen?",
-            image: require("../Images/fa4890d6d6d9f5b2d2cac9a6386b17e1.jpg"),
-            content:
-              "Juwelen maken je outfit compleet en geven meteen een persoonlijke touch aan je look. Of je nu kiest voor subtiele accenten of opvallende statement pieces, de juiste styling zorgt voor balans en uitstraling.1. Less is more (maar niet altijd)Voor een dagelijkse outfit werken fijne kettingen, kleine oorbellen of minimalistische ringen perfect. Combineer meerdere delicate juwelen voor een moderne layered look zonder dat het te druk wordt.2. Juwelen afstemmen op je outfit Bij drukke prints kies je best eenvoudige juwelen. Een basic outfit krijgt juist extra karakter met opvallende accessoires. Gouden tinten passen mooi bij warme kleuren, terwijl zilver vaak sterker uitkomt bij koele tinten.",
-          })
-        }
-      />
+      
 
       <StatusBar style="auto" />
     </ScrollView>

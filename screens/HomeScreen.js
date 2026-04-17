@@ -149,7 +149,7 @@ const HomeScreen = ({ navigation }) => {
           title={blog.title}
           description={blog.subtitle}
           image={blog.image}
-          onPress={() => navigation.navigate("BlogDetails", blog)}
+          onPress={() => navigation.navigate("BlogDetail", blog)}
         />
       ))}
 

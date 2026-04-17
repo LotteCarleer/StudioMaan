@@ -10,7 +10,7 @@ import {
 import { useState } from "react";
 
 const ProductDetail = ({ route }) => {
-  const { title, description, price, image } = route.params;
+  const { title, subtitle, price, image } = route.params;
   const [quantity, setQuantity] = useState(1);
 
   const increaseQuantity = () => {
@@ -24,10 +24,11 @@ const ProductDetail = ({ route }) => {
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <Text style={styles.title}>{title}</Text>
+     
       <Image source={image} style={styles.image} />
-      <Text>{description}</Text>
-      <Text>{price}</Text>
+       <Text style={styles.title}>{title}</Text>
+      <Text style={styles.subtitle}>{subtitle}</Text>
+      <Text  style={styles.price}>€{price}</Text>
 
       <View style={styles.quantityContainer}>
         <TouchableOpacity style={styles.button} onPress={decreaseQuantity}>
@@ -51,7 +52,7 @@ const ProductDetail = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#f4edda",
   },
   content: {
     alignItems: "center",
@@ -60,14 +61,28 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: "bold",
+    marginTop: 20,
   },
   image: {
-    width: "100%",
-    height: 150,
+    width: "300",
+    height: 300,
     borderRadius: 8,
+    marginTop: 20,
+  },
+  subtitle: {
+  textAlign:"center",
+  marginTop: "20",
+  marginLeft: "20",
+  marginRight: "20",
+  fontSize: "16",
+  },
+  price: {
+   fontWeight: "bold",
+   marginTop: 15,
+   fontSize: 20,
   },
   button: {
-    backgroundColor: "#007AFF",
+    backgroundColor: "#651121",
     padding: 10,
     borderRadius: 5,
   },
@@ -85,6 +100,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
     marginHorizontal: 10,
+  },
+  totalPrice: {
+  fontSize: 19,
+  fontWeight: "bold",
   },
 });
 

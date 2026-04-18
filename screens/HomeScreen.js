@@ -84,6 +84,7 @@ const HomeScreen = ({ navigation }) => {
             id: item.id,
             title: item.fieldData.name,
             subtitle: item.fieldData["post-summary"],
+            content: item.fieldData["post-body"],
             image: { uri: item.fieldData["main-image"]?.url },
           })),
         );

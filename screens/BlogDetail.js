@@ -8,13 +8,13 @@ import {
 
 
 const BlogDetail = ({ route }) => {
-  const { title, description, image, content } = route.params;
+  const { title, subtitle, image, content } = route.params;
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Text style={styles.title}>{title}</Text>
       <Image source={image} style={styles.image} />
-      <Text>{description}</Text>
+      <Text>{subtitle}</Text>
       <Text>{content}</Text>
 
       <StatusBar style="auto" />

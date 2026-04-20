@@ -34,17 +34,17 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    marginTop: "20",
-    marginBottom: "20",
+    marginTop: 20,
+    marginBottom: 20,
   },
   image: {
-    width: "300",
-    height: "300",
+    width: 300,
+    height: 300,
     borderRadius: 8,
   },
   Text: {
     textAlign: "center",
-    fontSize: "16",
+    fontSize: 16,
   
     marginBottom: 20,
     marginLeft: 20,

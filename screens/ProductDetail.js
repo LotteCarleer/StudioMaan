@@ -64,17 +64,17 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   image: {
-    width: "300",
+    width: 300,
     height: 300,
     borderRadius: 8,
     marginTop: 20,
   },
   subtitle: {
   textAlign:"center",
-  marginTop: "20",
-  marginLeft: "20",
-  marginRight: "20",
-  fontSize: "16",
+  marginTop: 20,
+  marginLeft: 20,
+  marginRight: 20,
+  fontSize: 16,
   },
   price: {
    fontWeight: "bold",

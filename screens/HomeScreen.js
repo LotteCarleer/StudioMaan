@@ -15,7 +15,7 @@ const categoryNames = {
   "699efb62ee05d1f40e83c2ea": "Cadeau",
 };
 
-//test 
+//Test
 
 const HomeScreen = ({ navigation }) => {
   const [products, setProducts] = useState([]);

@@ -8,14 +8,14 @@ import {
 
 
 const BlogDetail = ({ route }) => {
-  const { title, subtitle, image, content } = route.params;
+  const { title, subtitle, image, } = route.params;
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={styles.content}>
       <Text style={styles.title}>{title}</Text>
       <Image source={image} style={styles.image} />
-      <Text>{subtitle}</Text>
-      <Text>{content}</Text>
+      <Text style={styles.subtitle}>{subtitle}</Text>
+      
 
       <StatusBar style="auto" />
     </ScrollView>
@@ -25,7 +25,7 @@ const BlogDetail = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#f4edda",
   },
   content: {
     alignItems: "center",
@@ -34,11 +34,30 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: "bold",
+    marginTop: "20",
+    marginBottom: "20",
   },
   image: {
-    width: "100%",
-    height: 150,
+    width: "300",
+    height: "300",
     borderRadius: 8,
+  },
+  Text: {
+    textAlign: "center",
+    fontSize: "16",
+  
+    marginBottom: 20,
+    marginLeft: 20,
+    marginRight: 20,
+  },
+  subtitle:{
+   textAlign: "center",
+   fontSize: 16,
+   marginTop: 20,
+   marginBottom: 20,
+   marginLeft: 20,
+   marginRight: 20,
+
   },
  
 });

@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   Text: {
-    textAlign: "center",
+    textAlign: "left",
     fontSize: 16,
   
     marginBottom: 20,
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   subtitle:{
-   textAlign: "center",
+   textAlign: "left",
    fontSize: 16,
    marginTop: 20,
    marginBottom: 20,
